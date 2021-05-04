@@ -1,0 +1,99 @@
+Bienvenidos al curso de Cypress.
+
+1.-npm  init
+
+2.-npm install cypress --save-dev  --> Instalación
+
+ 
+
+3.-Npx instalación  https://www.npmjs.com/package/npx
+3.1--> npm install -g npx
+3.2--> npx cypress install --force  --> forzar la Instalación
+
+4.-node_modules\.bin\cypress open
+
+5.- npx cypress open
+
+6.-Parar Consola -->  ctrl + c
+
+
+
+
+
+8.-Key dasboard--> npx cypress run --record --key 7d09f81b-6d47-4f91-b7e0-9203d2e1f3a8
+
+9.-Comando para corre sinamope--> npx cypress run --record --key 7d09f81b-6d47-4f91-b7e0-9203d2e1f3a8  --spec "cypress\integration\sinamope\sinamope.js"
+
+
+1.-Actualizar sistema.
+.-npm install cypress --save-dev
+.-npx cypress install --force
+
+
+
+
+
+Info-repo
+
+…or create a new repository on the command line
+echo "# Test_Adefoc_cypress" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/rvndrupal/Test_Adefoc_cypress.git
+git push -u origin main
+
+
+
+…or push an existing repository from the command line
+git remote add origin https://github.com/rvndrupal/Test_Adefoc_cypress.git
+git branch -M main
+git push -u origin main
+…or import code from another repository
+You can initialize this repository with code from a Subversion, Mercurial, or TFS project.
+
+
+
+##################################
+Usuarios:
+
+Estimado Rodrigo,
+
+Te hago llegar los usuarios:
+
+Recepción: recepcion1
+
+Laboratorio: lab.diag6
+
+Emisión: emision1
+ 
+Para todos el usuario es: senasica
+
+Análisis: 1000
+
+La liga es : 10.16.3.36.8002/#/login
+
+
+
+Quedo a tus ordenes.
+
+
+Info roles.
+############################################
+Estimado Rodrigo, te hago llegar la información con la que pueden realizar las pruebas:
+
+Recepción: recepcion1
+Laboratorio: lab.diag6
+Emisión: emision1
+
+Contraseña para todos los roles es: senasica
+
+Análisis: 1000
+
+Cliente:  NOEMI DELGADO GAMBOA / 111300
+
+Sin más por el momento quedo atenta.
+
+
+Saludos.

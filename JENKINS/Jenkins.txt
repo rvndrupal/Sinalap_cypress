@@ -1,0 +1,79 @@
+Pasos de Parallelo.
+
+1.-Instalar jdk 11   ->   http://jdk.java.net/archive/    instalar el 11.02
+
+2.-Poner en c->programfiles 86-> crear carpeta java y descomprimir ahi.
+
+3.-Buscar Panel->System-> advanced system -> variables de entorno.
+    .-En el de abajo crear nueva variable de opcion y la imagen
+    .-En el patch tiene que tener la variable Java_home
+    .-Probar  cmd ->  java --version
+
+Nota par quitar jenkins .- https://stackoverflow.com/questions/26677637/how-to-uninstall-jenkins-on-windows
+    .-java -jar jenkins.war uninstall
+
+4.- Download jenkins
+    .-Nota correr sin simbolos--> -Dfile.encoding=UTF8 Jenkins.war
+    .-descragr el war .->https://www.jenkins.io/download/  descargar el exe
+    .-Ponerlo en C:
+    .-ejecutar .- cd C:\Program Files\Jenkins -Dfile.encoding=UTF8 Jenkins.war
+    .-jenkins  stop
+    .-jenkins  start -Dfile.encoding=UTF8 jenkins.war
+    .-jenkins restart
+
+    .-opcional-->  java -jar -Dfile.encoding=UTF8 Jenkins.war
+
+    .-Usuario-> Rodrigo
+    .-Password->Rorro131319+
+   
+    .-Instalar plugins Github
+    .-Instalar Node 
+    .-Instalar Green Ball
+
+    .-Configuración:
+    .-Global tool configuracion
+    .-Add jdk-> imagen
+    .-Git -> imagen
+    .-Node -> imagen
+
+    .-utf8-->  https://pacroy.medium.com/how-to-fix-jenkins-console-log-encoding-issue-on-windows-a1f4b26e0db4
+    Agregar --> -Dfile.encoding=UTF8
+
+
+    .-Crear job
+
+    .-Hacer el archivo JenkinFile
+    .-Crear un Job pero de tipo pipelline
+    .-super importante  agregar el projectId en cypress.json    -->    "projectId": "5qxa2x"
+    
+
+##############################################################################################
+Maquinas virtuales.
+
+Apagar los firewalls de las dos.
+.-probar con unos pin 
+.-Cambiar la ip de la maquina maestra como la imagen-> Configurar->sistema
+.-instalar java en las maquinas virtuales 11
+.-configurar variables de entorno.
+.-Instalar node
+.-Instalar Git
+.-Entra a la ip maestra:8080
+.-Configurar el git y el node de las virtuales como las imagenes
+.-Piner la configuración como se ve en la imagen.
+.-Descragr los jar en ponerlos en Agent1 y Agent2
+
+
+##############################################################################################
+Super importante mover los archivos de Cache
+
+1.- poner en el navegador de las carpetas --> %appdata% ->Enter     
+2.-te debe de mandar a Roaming
+3.-buscar la carpeta cypress y borrarla
+
+VIDEO-> 248
+
+ESTE PUNTO ES MUY IMPORTANTE PARA EL CACHE DE LA MAQUINA
+
+
+########################################################################
+
