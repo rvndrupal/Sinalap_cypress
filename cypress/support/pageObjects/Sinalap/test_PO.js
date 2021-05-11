@@ -379,6 +379,7 @@ class test_PO{
 
 
             //Comienza Resultados
+            cy.wait(4000)
             cy.get('#a-laboratorio-resultados').should('be.visible').click({force: true})
             cy.wait(tiempo)
             //buscando
