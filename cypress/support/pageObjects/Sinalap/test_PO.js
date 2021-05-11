@@ -357,7 +357,7 @@ class test_PO{
 
             //Menu firma de Servicios.
             cy.get('#a-laboratorio-firma-servicios').should('be.visible').click({force: true})
-            cy.wait(5000)
+            cy.wait(8000)
         
 
            
@@ -367,9 +367,9 @@ class test_PO{
               bandera.each(($el,index,$list)=>{
                   cy.log($el)
                   cy.get($el).click({force:true})
-                  cy.wait(1000)
+                  cy.wait(3000)
                   cy.get('#tr-seleccion-servicio-0 > td').dblclick({force: true})
-                  cy.wait(2000)                  
+                  cy.wait(3000)                  
               })
            
 
@@ -379,7 +379,7 @@ class test_PO{
 
 
             //Comienza Resultados
-            cy.wait(4000)
+            cy.wait(7000)
             cy.get('#a-laboratorio-resultados').should('be.visible').click({force: true})
             cy.wait(tiempo)
             //buscando
