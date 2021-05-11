@@ -361,19 +361,20 @@ class test_PO{
         
 
            
-            cy.get(".tableBodyScroll  tr td span ").invoke("attr","visibility: hidden").then(()=>{
+            // cy.get(".tableBodyScroll  tr td span ").invoke("attr","visibility: hidden").then(()=>{
                 
-              let bandera=cy.get("[title='']").should("not.be.visible")
-              bandera.each(($el,index,$list)=>{
-                  cy.log($el)
-                  cy.get($el).click({force:true})
-                  cy.wait(3000)
-                  cy.get('#tr-seleccion-servicio-0 > td').dblclick({force: true})
-                  cy.wait(3000)                  
-              })
-           
+            //   let bandera=cy.get("[title='']").should("not.be.visible")
+            //   bandera.each(($el,index,$list)=>{
+            //       cy.log($el)
+            //       cy.get($el).click({force:true})
+            //       cy.wait(3000)
+            //       cy.get('#tr-seleccion-servicio-0 > td').dblclick({force: true})
+            //       cy.wait(3000)                  
+            //   })
+            // })
 
-            })
+            cy.get('#tr-seleccion-servicio-0 > td').dblclick({force: true})
+            cy.wait(3000)   
             cy.get('#check-firmar-por-orden').click({force:true})
             cy.wait(tiempo)  
 
