@@ -278,6 +278,7 @@ class test_PO{
 
 
             //Muestras agregar el 1000
+            cy.wait(5000)
             cy.get('#checkbox-muestra-seleccion-0').should('be.visible').click({force: true})
             cy.wait(1500)
             cy.get('.ng-input > input').type('1000 -Identificación de ADN del herpes virusdel ostion por qPCR').type("{enter}")
