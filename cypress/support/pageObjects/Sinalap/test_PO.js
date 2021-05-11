@@ -356,6 +356,8 @@ class test_PO{
            
 
             //Menu firma de Servicios.
+
+            /*
             cy.get('#a-laboratorio-firma-servicios').should('be.visible').click({force: true})
             cy.wait(8000)
         
@@ -405,7 +407,7 @@ class test_PO{
 
             // cy.wait(9999999)
             
-
+            */
 
 
 
