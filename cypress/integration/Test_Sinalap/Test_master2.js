@@ -7,7 +7,7 @@ require('cypress-xpath')
 require('cypress-plugin-tab')
 
 
-describe('Proyecto Adefoc Modulo dos', () =>{ 
+describe('Proyecto Sinalap Prueba dos', () =>{ 
 
     const master= new test_PO()
     let numero_pruebas=1

@@ -7,7 +7,7 @@ require('cypress-xpath')
 require('cypress-plugin-tab')
 
 
-describe('Proyecto Sinalap Prueba uno', () =>{ 
+describe('Proyecto Sinalap Prueba cuatro', () =>{ 
 
     const master= new test_PO()
     let numero_pruebas=1
