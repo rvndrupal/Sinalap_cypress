@@ -81,13 +81,13 @@ class test_PO{
             let ale1=Math.floor(Math.random() * 9897685645354);
             let N_orden=0
 
-            // //correo responsable, electronico y Email
-            cy.get('#respNombre').should('be.visible').clear().type('Responsable #'+ale1)
-            cy.wait(tiempo)
+            //correo responsable, electronico y Email
+            // cy.get('#respNombre').should('be.visible').clear().type('Responsable #'+ale1)
+            // cy.wait(tiempo)
             cy.get('#select-orecen-servicio-tipo-envio').select('1: Object').should('have.value','1: Object')
             cy.wait(tiempo)
             cy.get('#correo').should('be.visible').clear().type('noemi.delgado.c@senasica.gob.mx')
-             cy.wait(tiempo)
+            cy.wait(tiempo)
             cy.get('#btn-orden-servicio-guardar-actualizar').should('be.visible').click({force: true})
             cy.wait(tiempo)
 
@@ -111,9 +111,9 @@ class test_PO{
             cy.wait(tiempo)
             cy.get('#select-captura-muestra-cat-especie').select('23: Object').should('have.value','23: Object')
             cy.wait(1000)
-            let oisa_Arr = ["2: Object", "3: Object","4: Object","5: Object"];
+            let oisa_Arr = ["OISA ACAPULCO", "OISA AGUASCALIENTES","OISA AICM"];
             let Random_oisa = oisa_Arr[Math.floor(Math.random()*oisa_Arr.length)]; 
-            cy.get('#select-captura-muestra-tif-oisa').select(Random_oisa).should('have.value',Random_oisa)
+            cy.get('#select-captura-muestra-tif-oisa').select(Random_oisa)
             cy.wait(1000)
             let cantidad_Arr = ["2", "3","4","5"];
             let Random_cantidad = cantidad_Arr[Math.floor(Math.random()*cantidad_Arr.length)]; 
@@ -278,8 +278,9 @@ class test_PO{
 
 
             //Muestras agregar el 1000
-            cy.get('#checkbox-muestra-seleccion-0').should('be.visible').click({force: true})
-            cy.wait(1500)
+            cy.wait(5000)
+            cy.get(".texto-limitado > .ng-untouched").should('be.visible').click({force: true})
+            cy.wait(2000)
             cy.get('.ng-input > input').type('1000 -Identificación de ADN del herpes virusdel ostion por qPCR').type("{enter}")
             cy.wait(1500)
             cy.get('#btn-muestra-agregar-servicio').should('be.visible').click({force: true})
@@ -292,6 +293,8 @@ class test_PO{
             cy.wait(tiempo)
             cy.get('#btn-orden-servicio-pagos').should('be.visible').click({force: true})
             cy.wait(tiempo)
+
+
 
             //Captura de Pagos
             cy.get('#fecha').should('be.visible').type(fechaOk)
@@ -315,7 +318,7 @@ class test_PO{
                 cy.wait(tiempo)
                 cy.get('#input-pago-guardar').should('be.visible').click()
                 cy.wait(1000)
-                cy.get('#btn-pago-cerrar-pagos').should('be.visible').click({force: true})
+                cy.get('#btn-pago-cerrar-pagos').click({force: true})
                 cy.wait(1000)
 
             })
@@ -341,10 +344,13 @@ class test_PO{
             cy.get('#a-cerrar-sesion').click({force: true})
             cy.reload()
             cy.wait(tiempo)
-
             
             
+          
 
+
+             
+            /*
             //Firma de Servicios nuevo usuario             
             cy.get('#usuario').should('be.visible').type('lab.diag6')
             cy.wait(tiempo)
@@ -352,32 +358,39 @@ class test_PO{
             cy.wait(tiempo)
             cy.get("#btn-recepcion-ingresar").should('be.visible').click({force: true})
             cy.wait(tiempo)
+
            
+
+          
 
             //Menu firma de Servicios.
+            
             cy.get('#a-laboratorio-firma-servicios').should('be.visible').click({force: true})
             cy.wait(5000)
-        
-
-           
-            cy.get(".tableBodyScroll  tr td span ").invoke("attr","visibility: hidden").then(()=>{
-                
-              let bandera=cy.get("[title='']").should("not.be.visible")
-              bandera.each(($el,index,$list)=>{
-                  cy.log($el)
-                  cy.get($el).click({force:true})
-                  cy.wait(1000)
-                  cy.get('#tr-seleccion-servicio-0 > td').dblclick({force: true})
-                  cy.wait(2000)                  
-              })
-           
-
+            
+            let bandera=cy.get("[title='']").should("not.be.visible").then(()=>{
+                bandera.each(($el,index,$list)=>{
+                    cy.log("muestra: " + index)
+                        for(let i=0; i<=1; i++){
+                            cy.get($el).click({force: true})
+                            cy.wait(1000)
+                            cy.scrollTo(0, 600)
+                            cy.wait(4000)
+                            cy.get('#check-firmar-por-orden').click({force: true})
+                            cy.wait(tiempo)
+                            cy.get('#tr-seleccion-servicio-0 > td').dblclick({force: true})
+                            cy.wait(3000)
+                        }
+                    })    
             })
-            cy.get('#check-firmar-por-orden').click({force:true})
+           
+            cy.get('#check-firmar-por-orden')
             cy.wait(tiempo)  
-
-
+          /*
+          
+            
             //Comienza Resultados
+            cy.wait(7000)
             cy.get('#a-laboratorio-resultados').should('be.visible').click({force: true})
             cy.wait(tiempo)
             //buscando
@@ -396,15 +409,29 @@ class test_PO{
             cy.get('#tab-resultados-muestras-terminadas').should('be.visible').click({force: true})
             cy.wait(tiempo)
 
+            //Comienza Revisión
+            cy.wait(1500)
+            cy.get('#a-laboratorio-revision').should('be.visible').click({force: true})
+            cy.wait(tiempo)
+            //Evaluar boton
+            cy.get('#btn-revision-enviar-orden').invoke("attr","visibility: disabled").then(()=>{
+                cy.log("ESTA DESACTIVADO")
+            })
+            cy.wait(tiempo)
+
+            cy.get('#carpeta-abrir-cerrar-orden-0').should('be.visible').click({force: true})
+            cy.wait(tiempo)
+
+            */
             
            
-
-
-            // cy.wait(9999999)
             
 
+ 
+            
+            
 
-
+            
 
 
             
@@ -418,9 +445,9 @@ class test_PO{
 
 
             //Salir
-            cy.get('#a-cerrar-sesion').click({force: true})
-            cy.reload()
-            cy.wait(tiempo)
+            // cy.get('#a-cerrar-sesion').click({force: true})
+            // cy.reload()
+            // cy.wait(tiempo)
         }
        
 
