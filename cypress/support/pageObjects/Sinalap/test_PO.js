@@ -299,8 +299,8 @@ class test_PO{
             //Captura de Pagos
             cy.get('#fecha').should('be.visible').type(fechaOk)
             cy.wait(tiempo)
-            let ale3=Math.floor(Math.random() * 3000);
-            cy.get('#input-pago-cie').should('be.visible').type('cie#'+ale3)
+            let ale3=Math.floor(Math.random() * 90798789789789456367);
+            cy.get('#input-pago-cie').should('be.visible').type('cie#'+ale3+4548)
             cy.wait(tiempo)
             cy.get('#select-pago-servicio').select('1: Object')
             cy.wait(tiempo)
