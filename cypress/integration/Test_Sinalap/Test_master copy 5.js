@@ -13,7 +13,7 @@ describe('Proyecto Sinalap Prueba uno', () =>{
     const master= new test_PO()
     const masterF= new test_POF()
     let numero_pruebas=1
-    let tiempo_general=500
+    let tiempo_general=900
 
 
     //master.visitHome(500)
