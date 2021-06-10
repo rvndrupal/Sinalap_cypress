@@ -19,7 +19,7 @@ describe('Proyecto Sinalap Prueba uno', () =>{
     //master.visitHome(500)
     
    
-    it('Master sinalap', () =>{
+    it.only('Master sinalap', () =>{
         Cypress.config('defaultCommandTimeout', 25000)
         master.Master(tiempo_general,numero_pruebas)
         
